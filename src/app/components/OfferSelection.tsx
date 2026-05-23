@@ -25,25 +25,25 @@ export const OfferSelection = ({ t, lang, theme, onSelect, selectedOffer }) => {
   const rawOffers = [
     {
       id: 'single',
-      price: '35',
-      originalPrice: '50',
+      price: '49',
+      originalPrice: '70',
       discount: '30% OFF',
       ...t.offers.items.single
     },
     {
       id: 'double',
-      price: '60',
-      originalPrice: '100',
-      discount: '40% OFF',
+      price: '80',
+      originalPrice: '140',
+      discount: '43% OFF',
       badge: t.offers.bestValue,
       recommended: true,
       ...t.offers.items.double
     },
     {
       id: 'triple',
-      price: '80',
-      originalPrice: '150',
-      discount: '45% OFF',
+      price: '105',
+      originalPrice: '210',
+      discount: '50% OFF',
       badge: t.offers.highSavings,
       ...t.offers.items.triple
     }
@@ -102,7 +102,7 @@ export const OfferSelection = ({ t, lang, theme, onSelect, selectedOffer }) => {
               </div>
 
               <div className="flex justify-between items-end">
-                <p className={`text-sm transition-colors ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>{lang === 'ar' ? (offer.id === 'single' ? 'وفر 15 دينار' : offer.id === 'double' ? 'وفر 40 دينار ' : 'وفر 70 دينار') : offer.desc}</p>
+                <p className={`text-sm transition-colors ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>{lang === 'ar' ? (offer.id === 'single' ? 'وفر 21 دينار' : offer.id === 'double' ? 'وفر 60 دينار ' : 'وفر 105 دينار') : offer.desc}</p>
                 <div className={`text-[10px] font-black px-2 py-1 rounded-lg transition-colors ${isDark ? 'bg-lime-400/10 text-lime-400' : 'bg-lime-400/20 text-lime-700'}`}>
                     {offer.discount}
                 </div>

@@ -68,7 +68,7 @@ export const Hero = ({ t, lang, theme }) => {
         </p>
 
         <div className="relative mb-8">
-          <div className={`relative z-10 drop-shadow-[0_0_20px_rgba(163,230,53,0.2)] mb-6`}>
+          <div className={`relative z-10 drop-shadow-[0_0_20px_rgba(163,230,53,0.2)] mb-6 flex justify-center`}>
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentImage}
@@ -76,12 +76,12 @@ export const Hero = ({ t, lang, theme }) => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 1.05 }}
                 transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
-                className="w-full"
+                className="block w-fit max-w-[320px] rounded-3xl border-4 border-lime-400/20 overflow-hidden leading-none"
               >
                 <ImageWithFallback
                   src={imageList[currentImage]}
                   alt={lang === 'ar' ? 'سوار Fit Band الذكي' : 'Fit Band Smart Tracker'}
-                  className={`w-full max-w-[320px] mx-auto rounded-3xl aspect-square object-contain border-4 border-lime-400/20 transition-all duration-500 ${isDark ? 'bg-zinc-900/50' : 'bg-white'}`}
+                  className="block w-full max-w-[320px] h-auto"
                 />
               </motion.div>
             </AnimatePresence>

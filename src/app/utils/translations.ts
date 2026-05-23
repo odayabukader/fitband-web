@@ -4,7 +4,7 @@ export const translations = {
     brand: 'Fit Band',
     currency: 'JOD',
     hero: {
-      rating: '4.8 rating from 1,000+ happy customers',
+      rating: '4.8 rating from 800+ happy customers',
       title: 'Move smarter.',
       titleAccent: 'Every single day.',
       desc: 'The best integrated smart band that tracks your sports and health activities.',
@@ -114,7 +114,7 @@ export const translations = {
     brand: 'Fit Band',
     currency: 'دينار',
     hero: {
-      rating: 'تقييم 4.8 من أكثر من 1000 عميل سعيد',
+      rating: 'تقييم 4.8 من أكثر من 800 عميل سعيد',
       title: 'تحرك بذكاء.',
       titleAccent: 'كل يوم.',
       desc: 'افضل سوار ذكي متكامل الذي يتتبع نشاطك الرياضي والصحي',

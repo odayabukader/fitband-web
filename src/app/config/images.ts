@@ -14,7 +14,7 @@ function img(path: string) {
   const base = BASE.endsWith('/') ? BASE : BASE + '/';
   const url = `${base}images/${path}`;
   // Avoid cached 404 in dev; bump t when you replace an image to force reload
-  return isDev ? `${url}?t=2` : url;
+  return isDev ? `${url}?t=12` : url;
 }
 
 // Export all images using public folder paths

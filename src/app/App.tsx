@@ -19,10 +19,10 @@ export default function App() {
   const [selectedOffer, setSelectedOffer] = React.useState({
     id: 'single',
     name: 'سوار واحد',
-    price: '35',
-    originalPrice: '50',
+    price: '49',
+    originalPrice: '70',
     discount: '30% OFF',
-    desc: 'وفر 15 دينار',
+    desc: 'وفر 21 دينار',
     badge: undefined,
     recommended: false
   });
@@ -32,9 +32,9 @@ export default function App() {
     setSelectedOffer(prev => {
         const key = prev.id as 'single' | 'double' | 'triple';
         const priceMap = {
-            single: { p: '35', o: '50', d: '30% OFF' },
-            double: { p: '60', o: '100', d: '40% OFF' },
-            triple: { p: '80', o: '150', d: '45% OFF' }
+            single: { p: '49', o: '70', d: '30% OFF' },
+            double: { p: '80', o: '140', d: '43% OFF' },
+            triple: { p: '105', o: '210', d: '50% OFF' }
         };
         return {
             ...prev,
