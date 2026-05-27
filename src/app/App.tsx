@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { motion } from 'motion/react';
 import { Hero } from '@/app/components/Hero';
 import { Problems } from '@/app/components/Problems';
 import { ProductShowcase } from '@/app/components/ProductShowcase';
@@ -14,14 +13,8 @@ import { Languages, Sun, Moon } from 'lucide-react';
 export default function App() {
   const [lang, setLang] = React.useState('ar');
   const [theme, setTheme] = React.useState('dark');
-  const [themeTransition, setThemeTransition] = React.useState(false);
   const t = translations[lang];
-
-  // Avoid 500ms color transitions on first paint (causes flash on refresh)
-  React.useEffect(() => {
-    const id = requestAnimationFrame(() => setThemeTransition(true));
-    return () => cancelAnimationFrame(id);
-  }, []);
+  const langSynced = React.useRef(false);
 
   const [selectedOffer, setSelectedOffer] = React.useState({
     id: 'single',
@@ -34,8 +27,12 @@ export default function App() {
     recommended: false
   });
 
-  // Keep selected offer synced with language changes
+  // Sync offer copy when language changes (skip initial mount to avoid extra render)
   React.useEffect(() => {
+    if (!langSynced.current) {
+      langSynced.current = true;
+      return;
+    }
     setSelectedOffer(prev => {
         const key = prev.id as 'single' | 'double' | 'triple';
         const priceMap = {
@@ -65,7 +62,7 @@ export default function App() {
 
   return (
     <div 
-        className={`min-h-screen ${themeTransition ? 'transition-colors duration-500' : ''} ${theme === 'dark' ? 'bg-zinc-950 text-white' : 'bg-zinc-50 text-zinc-900'} ${lang === 'ar' ? 'font-["Cairo"]' : 'font-["Inter"]'}`}
+        className={`min-h-screen ${theme === 'dark' ? 'bg-zinc-950 text-white' : 'bg-zinc-50 text-zinc-900'} ${lang === 'ar' ? 'font-["Cairo"]' : 'font-["Inter"]'}`}
         dir={t.dir}
     >
       <Toaster position="top-center" expand={false} richColors theme={theme as any} />
@@ -73,7 +70,7 @@ export default function App() {
       {/* Header Overlay */}
       <header className="fixed top-0 left-0 right-0 z-50 px-6 py-4 flex justify-between items-center max-w-md mx-auto">
         <div className={`backdrop-blur-md px-6 py-2 rounded-full border flex items-center gap-2 transition-colors ${theme === 'dark' ? 'bg-zinc-950/40 border-white/10' : 'bg-white/60 border-zinc-200'}`}>
-            <div className="w-3 h-3 bg-lime-400 rounded-full animate-pulse" />
+            <div className="w-3 h-3 bg-lime-400 rounded-full" />
             <span className={`text-sm font-black tracking-tighter uppercase italic ${theme === 'dark' ? 'text-white' : 'text-zinc-950'}`}>
               {t.brand}
             </span>

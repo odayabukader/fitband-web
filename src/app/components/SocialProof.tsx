@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Star, CheckCircle2 } from 'lucide-react';
-import { motion } from 'motion/react';
 
 export const SocialProof = ({ t, lang, theme }) => {
   const isDark = theme === 'dark';
@@ -13,7 +12,7 @@ export const SocialProof = ({ t, lang, theme }) => {
   };
 
   return (
-    <section className={`py-[60px] px-6 transition-colors duration-500 ${isDark ? 'bg-zinc-950' : 'bg-slate-50'}`}>
+    <section className={`py-[60px] px-6 ${isDark ? 'bg-zinc-950' : 'bg-slate-50'}`}>
       <div className="max-w-md mx-auto">
         <div className="text-center mb-10">
           <div className="flex justify-center gap-1 mb-4">
@@ -33,12 +32,9 @@ export const SocialProof = ({ t, lang, theme }) => {
             { name: 'محمد', review: 'صراحة ال fitband ممتازة وقراءتها 100%.. خصوصاً انا مبارح توترت لمرحلة معينة وفعليا اعطاني انه كنت متوترة بدرجة كبيرة وموضوع قراءات النوم ممتازة حبيت التفصيل و اهنيكم على هالمنتج', location: 'تحقق من الشراء' },
             { name: 'عدي', review: 'وصلتني الأسوارة مرتبة كتير وفعلا قريبة جدا من ال whoop واغلب القراءات نفسها والاهم من هيك انها بدون اشتراك', location: 'تحقق من الشراء' }
           ] : t.reviews.items).map((tItem, idx) => (
-            <motion.div 
+            <div 
               key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className={`group p-6 rounded-3xl border relative overflow-hidden transition-colors ${isDark ? 'bg-zinc-800/40 border-white/5' : 'bg-zinc-50 border-zinc-200'}`}
+              className={`group p-6 rounded-3xl border relative overflow-hidden ${isDark ? 'bg-zinc-800/40 border-white/5' : 'bg-zinc-50 border-zinc-200'}`}
             >
               <div className="flex justify-between items-start mb-4">
                 <div className="flex flex-col">
@@ -58,9 +54,7 @@ export const SocialProof = ({ t, lang, theme }) => {
                   onClick={() => handleLike(idx)}
                   className={`hidden items-center gap-2 px-3 py-1.5 rounded-full transition-colors ${isDark ? 'bg-white/5 hover:bg-white/10' : 'bg-white hover:bg-zinc-100 border border-zinc-200'}`}
                 >
-                  <motion.div whileTap={{ scale: 1.5 }}>
-                    <CheckCircle2 className="w-4 h-4 text-lime-600" />
-                  </motion.div>
+                  <CheckCircle2 className="w-4 h-4 text-lime-600" />
                   <span className={`text-[10px] font-bold uppercase transition-colors ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>
                     {lang === 'ar' ? 'مفيد' : 'Helpful'} ({likes[idx] || 0})
                   </span>
@@ -70,7 +64,7 @@ export const SocialProof = ({ t, lang, theme }) => {
               <div className={`absolute top-6 ${lang === 'ar' ? 'left-6' : 'right-6'} opacity-10 group-hover:scale-110 transition-transform`}>
                 <CheckCircle2 className={`w-12 h-12 ${isDark ? 'text-lime-400' : 'text-lime-600'}`} />
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 

@@ -1,3 +1,33 @@
 @import './fonts.css';
 @import './tailwind.css';
 @import './theme.css';
+
+html {
+  background-color: #09090b;
+  color: #fafafa;
+}
+
+body {
+  background-color: #09090b;
+  margin: 0;
+  font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+}
+
+/* Prevent transition/animation flash before React paints */
+html:not(.app-ready) *,
+html:not(.app-ready) *::before,
+html:not(.app-ready) *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

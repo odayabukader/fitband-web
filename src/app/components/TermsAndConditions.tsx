@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { motion } from 'motion/react';
 import { AlertCircle, Check, HelpCircle } from 'lucide-react';
 
 export const TermsAndConditions = ({ lang, theme }) => {
@@ -25,7 +24,7 @@ export const TermsAndConditions = ({ lang, theme }) => {
   ];
 
   return (
-    <section className={`overflow-hidden relative transition-colors duration-500 ${isDark ? 'bg-zinc-950' : 'bg-zinc-50'} px-[24px] pt-[40px] pb-[120px]`}>
+    <section className={`overflow-hidden relative ${isDark ? 'bg-zinc-950' : 'bg-zinc-50'} px-[24px] pt-[40px] pb-[120px]`}>
       <div className="max-w-md mx-auto">
         <div className={`relative p-8 rounded-[2.5rem] overflow-hidden border transition-colors ${isDark ? 'bg-zinc-900 border-white/5' : 'bg-white border-zinc-200'}`}>
             
@@ -43,18 +42,15 @@ export const TermsAndConditions = ({ lang, theme }) => {
 
           <div className="space-y-4">
             {terms.map((item, idx) => (
-              <motion.div 
+              <div 
                 key={idx}
-                initial={{ opacity: 0, x: isRtl ? 20 : -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: idx * 0.1 }}
-                className={`flex items-start gap-3 p-3 rounded-2xl transition-colors ${isDark ? 'bg-zinc-950/50 hover:bg-zinc-950' : 'bg-zinc-50 hover:bg-white border border-transparent hover:border-zinc-200'}`}
+                className={`flex items-start gap-3 p-3 rounded-2xl ${isDark ? 'bg-zinc-950/50 hover:bg-zinc-950' : 'bg-zinc-50 hover:bg-white border border-transparent hover:border-zinc-200'}`}
               >
                 <div className={`mt-1 w-1.5 h-1.5 rounded-full shrink-0 ${isDark ? 'bg-lime-400' : 'bg-lime-600'}`} />
                 <p className={`text-xs font-medium leading-relaxed text-left ${isRtl ? 'text-right' : ''} ${isDark ? 'text-zinc-300' : 'text-zinc-600'}`}>
                   {item.text}
                 </p>
-              </motion.div>
+              </div>
             ))}
           </div>
 

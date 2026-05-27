@@ -175,7 +175,7 @@ const JORDAN_LOCATIONS = {
   }
 };
 
-export const CheckoutForm = ({ t, lang, theme, selectedOffer }) => {
+const CheckoutFormInner = ({ t, lang, theme, selectedOffer }) => {
   const isRtl = lang === 'ar';
   const isDark = theme === 'dark';
   const [isSubmitted, setIsSubmitted] = React.useState(false);
@@ -656,3 +656,5 @@ export const CheckoutForm = ({ t, lang, theme, selectedOffer }) => {
     </div>
   );
 };
+
+export const CheckoutForm = React.memo(CheckoutFormInner);
