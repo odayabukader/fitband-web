@@ -24,8 +24,8 @@ export const Problems = ({ t, lang, theme }) => {
                 key={idx}
                 initial={{ opacity: 0, x: isRtl ? 20 : -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ delay: idx * 0.05, duration: 0.35 }}
                 className={`flex items-start gap-4 p-6 rounded-3xl border transition-colors ${isDark ? 'bg-zinc-800/50 border-white/5' : 'bg-white border-zinc-200'}`}
               >
                 <div className={`p-3 rounded-xl shrink-0 transition-colors ${isDark ? 'bg-lime-400/10' : 'bg-lime-400/20'}`}>

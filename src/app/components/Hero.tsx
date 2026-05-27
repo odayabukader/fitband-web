@@ -22,6 +22,11 @@ export const Hero = ({ t, lang, theme }) => {
   ];
 
   const [currentImage, setCurrentImage] = React.useState(0);
+  const previousImage = React.useRef(currentImage);
+  const animateImageEnter = previousImage.current !== currentImage;
+  React.useEffect(() => {
+    previousImage.current = currentImage;
+  }, [currentImage]);
 
   React.useEffect(() => {
     const timer = setInterval(() => {
@@ -41,12 +46,7 @@ export const Hero = ({ t, lang, theme }) => {
         }} 
       />
       
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="relative z-10 text-center max-w-md w-full"
-      >
+      <div className="relative z-10 text-center max-w-md w-full">
         <div className={`inline-flex items-center gap-1 backdrop-blur-sm px-3 py-1 rounded-full border mb-6 transition-colors ${isDark ? 'bg-zinc-900/60 border-white/10' : 'bg-white/60 border-zinc-200'}`}>
           <div className={`flex ${isRtl ? '-space-x-reverse' : ''} -space-x-1`}>
             {[1, 2, 3].map((i) => (
@@ -72,7 +72,7 @@ export const Hero = ({ t, lang, theme }) => {
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentImage}
-                initial={{ opacity: 0, scale: 0.95 }}
+                initial={animateImageEnter ? { opacity: 0, scale: 0.95 } : false}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 1.05 }}
                 transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
@@ -127,7 +127,7 @@ export const Hero = ({ t, lang, theme }) => {
             {t.hero.stock}
           </p>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };

@@ -14,7 +14,14 @@ import { Languages, Sun, Moon } from 'lucide-react';
 export default function App() {
   const [lang, setLang] = React.useState('ar');
   const [theme, setTheme] = React.useState('dark');
+  const [themeTransition, setThemeTransition] = React.useState(false);
   const t = translations[lang];
+
+  // Avoid 500ms color transitions on first paint (causes flash on refresh)
+  React.useEffect(() => {
+    const id = requestAnimationFrame(() => setThemeTransition(true));
+    return () => cancelAnimationFrame(id);
+  }, []);
 
   const [selectedOffer, setSelectedOffer] = React.useState({
     id: 'single',
@@ -58,7 +65,7 @@ export default function App() {
 
   return (
     <div 
-        className={`min-h-screen transition-colors duration-500 ${theme === 'dark' ? 'bg-zinc-950 text-white' : 'bg-zinc-50 text-zinc-900'} ${lang === 'ar' ? 'font-["Cairo"]' : 'font-["Inter"]'}`}
+        className={`min-h-screen ${themeTransition ? 'transition-colors duration-500' : ''} ${theme === 'dark' ? 'bg-zinc-950 text-white' : 'bg-zinc-50 text-zinc-900'} ${lang === 'ar' ? 'font-["Cairo"]' : 'font-["Inter"]'}`}
         dir={t.dir}
     >
       <Toaster position="top-center" expand={false} richColors theme={theme as any} />
