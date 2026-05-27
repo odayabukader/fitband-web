@@ -79,6 +79,16 @@
 }
 
 @theme inline {
+  /* Brand green #00E63A (replaces #7DCD00) */
+  --color-lime-50: #e8fdf0;
+  --color-lime-100: #c8f9d8;
+  --color-lime-300: #4dff7a;
+  --color-lime-400: #00e63a;
+  --color-lime-500: #00e63a;
+  --color-lime-600: #00b82e;
+  --color-lime-700: #009327;
+  --color-lime-800: #007422;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);

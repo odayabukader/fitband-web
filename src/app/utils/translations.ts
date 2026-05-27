@@ -16,13 +16,13 @@ export const translations = {
     problems: {
       title: 'Why you need a smart fitness band',
       items: [
+        { title: 'AI Health Analysis', desc: 'Analyzing health data based on your daily performance using AI.' },
         { title: 'Track Activity', desc: 'Real-time steps, calories, and distance tracking for every movement.' },
         { title: 'Improve Sleep', desc: 'Deep analysis of your sleep patterns to help you wake up refreshed.' },
-        { title: 'Heart Monitoring', desc: '24/7 heart rate monitoring with alerts for any irregularities.' },
+        { title: 'Blood Pressure & Heart Monitoring', desc: '24/7 heart rate monitoring with alerts for any irregularities.' },
         { title: 'No Subscriptions', desc: 'Buy once, own forever. No hidden monthly fees or locked features.' },
         { title: '40-Day Battery', desc: 'One single charge keeps you going for over a month.' },
-        { title: 'Durable & Waterproof', desc: 'IP68 rated. Wear it in the shower, the rain, or during heavy workouts.' },
-        { title: 'AI Health Analysis', desc: 'Analyzing health data based on your daily performance using AI.' }
+        { title: 'Durable & Waterproof', desc: 'IP68 rated. Wear it in the shower, the rain, or during heavy workouts.' }
       ]
     },
     showcase: {
@@ -34,7 +34,7 @@ export const translations = {
         benefits: ['Sleep Tracking', 'Steps & Calories', 'Heart Rate', 'Sports Modes', 'Long Battery']
     },
     reviews: {
-        title: 'Loved by 1,000+ athletes',
+        title: 'Loved by 800+ athletes',
         subtitle: 'Join the Fit Band community today.',
         officialPartner: 'Official Partner',
         items: [
@@ -51,9 +51,9 @@ export const translations = {
         urgent: 'ordered in the last 2 hours. Stock is low.',
         people: 'people',
         items: {
-            single: { name: '1 Fit Band', desc: 'Perfect for beginners' },
-            double: { name: '2 Fit Bands', desc: 'Save 35 JOD Today' },
-            triple: { name: '3 Fit Bands', desc: 'Limited Offer - Save 90 JOD' }
+            single: { name: '1 Band', desc: 'Save 21 JOD' },
+            double: { name: '2 Bands', desc: 'Save 60 JOD' },
+            triple: { name: '3 Bands', desc: 'Save 105 JOD' }
         }
     },
     checkout: {
@@ -71,9 +71,9 @@ export const translations = {
         addressPlaceholder: 'Ex: City, Street Name, House Number',
         summary: 'Selected Pack',
         shipping: 'Shipping',
-        free: 'FREE',
+        free: 'FREE Shipping',
         inspection: 'Free Inspection Before Receipt',
-        warranty: '1-Month Replacement Warranty',
+        warranty: '3-Month Replacement Warranty',
         total: 'Total Price',
         upsell: 'YES! Add extra Replacement Strap for ONLY 3.00 JOD',
         upsellSub: 'Save 50% on accessories now',
@@ -124,15 +124,15 @@ export const translations = {
     },
     socialProofBar: 'موثوق من قبل 10,000+ رياضي حول العالم',
     problems: {
-      title: 'لماذا تحتاج إلى سوار لياقة ذكي',
+      title: 'لماذا تحتاج سوار fitband الذكي؟',
       items: [
+        { title: 'ذكاء اصطناعي', desc: 'تحليل بيانات الصحة بناء على اداءك اليومي باستخدام الذكاء الاصطناعي' },
         { title: 'تتبع النشاط', desc: 'تتبع الخطوات والسعرات الحرارية والمسافة في الوقت الفعلي لكل حركة.' },
         { title: 'تحسين النوم', desc: 'تحليل عميق لأنماط نومك لمساعدتك على الاستيقاظ منتعشاً.' },
-        { title: 'مراقبة القلب', desc: 'مراقبة معدل ضربات القلب على مدار الساعة طوال أيام الأسبوع مع تنبيهات.' },
+        { title: 'مراقبة ضغط الدم و القلب', desc: 'مراقبة معدل ضربات القلب على مدار الساعة طوال أيام الأسبوع.' },
         { title: 'بدون اشتراكات', desc: 'اشترِ مرة واحدة، وامتلكه للأبد. لا توجد رسوم شهرية مخفية.' },
         { title: 'بطارية تدوم 40 يوماً', desc: 'شحنة واحدة تبقيك مستمراً لمدة تزيد عن شهر كامل.' },
-        { title: 'متين ومقاوم للماء', desc: 'تصنيف IP68. ارتديه في الاستحمام أو المطر أو أثناء التمارين الشاقة.' },
-        { title: 'ذكاء اصطناعي', desc: 'تحليل بيانات الصحة بناء على اداءك اليومي باستخدام الذكاء الاصطناعي' }
+        { title: 'متين ومقاوم للماء', desc: 'تصنيف IP68. ارتديه في الاستحمام أو المطر أو أثناء التمارين الشاقة.' }
       ]
     },
     showcase: {
@@ -144,7 +144,7 @@ export const translations = {
         benefits: ['تتبع النوم', 'الخطوات والسعرات', 'ضربات القلب', 'أنماط رياضية', 'بطارية طويلة']
     },
     reviews: {
-        title: 'محبوب من قبل 1000+ رياضي',
+        title: 'محبوب من قبل 800+ رياضي',
         subtitle: 'انضم إلى مجتمع Fit Band اليوم.',
         officialPartner: 'شريك رسمي',
         items: [
@@ -162,8 +162,8 @@ export const translations = {
         people: 'شخص',
         items: {
             single: { name: 'سوار واحد', desc: 'مثالي للمبتدئين' },
-            double: { name: 'سوارين', desc: 'وفر 35 دينار اليوم' },
-            triple: { name: '3 أساور', desc: 'عرض محدود - وفر 90 دينار' }
+            double: { name: 'سوارين', desc: 'وفر 60 دينار' },
+            triple: { name: '3 أساور', desc: 'وفر 105 دينار' }
         }
     },
     checkout: {
@@ -183,7 +183,7 @@ export const translations = {
         shipping: 'الشحن',
         free: 'مج��ني',
         inspection: 'معاينة مجانية قبل الاستلام',
-        warranty: 'كفالة تبديلية لمدة شهر',
+        warranty: 'كفالة تبديلية لمدة ثلاث اشهر',
         total: 'السعر الإجمالي',
         upsell: 'نعم! أضف حزاماً إضافياً مقابل 3.00 دينار فقط',
         upsellSub: 'وفر 50% على الإكسسوارات الآن',

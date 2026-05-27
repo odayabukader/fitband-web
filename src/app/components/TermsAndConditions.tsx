@@ -20,7 +20,7 @@ export const TermsAndConditions = ({ lang, theme }) => {
       text: lang === 'ar' ? 'بعد الاستلام، لا يوجد تبديل أو ترجيع إلا في حالة وجود خلل مصنعي.' : 'After receipt, no exchange or return except in case of manufacturing defect.',
     },
     {
-      text: lang === 'ar' ? 'كفاله تبديليه لمدة شهر في حال وجود خلل مصنعي.' : 'One-month replacement warranty in case of manufacturing defect.',
+      text: lang === 'ar' ? 'كفاله تبديليه لمدة ثلاث اشهر في حال وجود خلل مصنعي.' : 'Three-month replacement warranty in case of manufacturing defect.',
     }
   ];
 

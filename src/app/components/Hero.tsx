@@ -36,8 +36,8 @@ export const Hero = ({ t, lang, theme }) => {
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-50" 
         style={{ 
           background: isDark 
-            ? 'radial-gradient(circle, rgba(163,230,53,0.15) 0%, rgba(163,230,53,0) 70%)' 
-            : 'radial-gradient(circle, rgba(163,230,53,0.2) 0%, rgba(163,230,53,0) 70%)' 
+            ? 'radial-gradient(circle, rgba(0,230,58,0.15) 0%, rgba(0,230,58,0) 70%)' 
+            : 'radial-gradient(circle, rgba(0,230,58,0.2) 0%, rgba(0,230,58,0) 70%)' 
         }} 
       />
       
@@ -68,7 +68,7 @@ export const Hero = ({ t, lang, theme }) => {
         </p>
 
         <div className="relative mb-8">
-          <div className={`relative z-10 drop-shadow-[0_0_20px_rgba(163,230,53,0.2)] mb-6 flex justify-center`}>
+          <div className={`relative z-10 drop-shadow-[0_0_20px_rgba(0,230,58,0.2)] mb-6 flex justify-center`}>
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentImage}
@@ -85,10 +85,6 @@ export const Hero = ({ t, lang, theme }) => {
                 />
               </motion.div>
             </AnimatePresence>
-            
-            <div className={`absolute -top-4 ${isRtl ? '-left-2' : '-right-2'} z-20 bg-lime-400 text-zinc-950 font-black text-sm px-4 py-2 rounded-xl ${isRtl ? '-rotate-12' : 'rotate-12'} border-2 uppercase tracking-tighter transition-colors ${isDark ? 'border-zinc-950' : 'border-zinc-200'}`}>
-              {lang === 'ar' ? 'خصم 30%' : t.hero.discount}
-            </div>
           </div>
 
           {/* Gallery Thumbnails - show real images by default */}
@@ -100,7 +96,7 @@ export const Hero = ({ t, lang, theme }) => {
                 onClick={() => setCurrentImage(idx)}
                 className={`relative aspect-square rounded-lg overflow-hidden border-2 transition-all duration-300 ${
                   currentImage === idx 
-                    ? 'border-lime-500 scale-105 shadow-[0_0_10px_rgba(163,230,53,0.4)]' 
+                    ? 'border-lime-500 scale-105 shadow-[0_0_10px_rgba(0,230,58,0.4)]' 
                     : 'border-transparent opacity-60 hover:opacity-100'
                 }`}
               >

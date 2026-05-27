@@ -5,7 +5,7 @@ import { CheckoutForm } from './CheckoutForm';
 
 export const OfferSelection = ({ t, lang, theme, onSelect, selectedOffer }) => {
   const [selected, setSelected] = React.useState('single');
-  const [timeLeft, setTimeLeft] = React.useState(600); // 10 minutes
+  const [timeLeft, setTimeLeft] = React.useState(20 * 60 * 60); // 20 hours
   const isRtl = lang === 'ar';
   const isDark = theme === 'dark';
 
@@ -17,9 +17,14 @@ export const OfferSelection = ({ t, lang, theme, onSelect, selectedOffer }) => {
   }, []);
 
   const formatTime = (seconds) => {
-    const mins = Math.floor(seconds / 60);
+    const hours = Math.floor(seconds / 3600);
+    const mins = Math.floor((seconds % 3600) / 60);
     const secs = seconds % 60;
-    return `${mins}:${secs.toString().padStart(2, '0')}`;
+    if (hours > 0) {
+      return `${hours}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    }
+    const minsOnly = Math.floor(seconds / 60);
+    return `${minsOnly}:${secs.toString().padStart(2, '0')}`;
   };
 
   const rawOffers = [
@@ -119,7 +124,7 @@ export const OfferSelection = ({ t, lang, theme, onSelect, selectedOffer }) => {
             <div className="flex items-center gap-3">
                 <TrendingUp className={`w-5 h-5 shrink-0 transition-colors ${isDark ? 'text-lime-400' : 'text-lime-600'}`} />
                 <p className={`text-[11px] leading-tight transition-colors ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>
-                    <span className={`font-bold transition-colors ${isDark ? 'text-white' : 'text-zinc-950'}`}>142 {t.offers.people}</span> {t.offers.urgent}
+                    <span className={`font-bold transition-colors ${isDark ? 'text-white' : 'text-zinc-950'}`}>32 {t.offers.people}</span> {t.offers.urgent}
                 </p>
             </div>
             <div className={`flex items-center justify-between border-t pt-3 transition-colors ${isDark ? 'border-white/5' : 'border-zinc-100'}`}>

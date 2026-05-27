@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Activity, Moon, Heart, Battery, CreditCard, ShieldCheck, Sparkles } from 'lucide-react';
 import { motion } from 'motion/react';
 
-const icons = [Activity, Moon, Heart, CreditCard, Battery, ShieldCheck, Sparkles];
+const icons = [Sparkles, Activity, Moon, Heart, CreditCard, Battery, ShieldCheck];
 
 export const Problems = ({ t, lang, theme }) => {
   const isRtl = lang === 'ar';

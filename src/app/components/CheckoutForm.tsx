@@ -589,7 +589,7 @@ export const CheckoutForm = ({ t, lang, theme, selectedOffer }) => {
           <button 
             type="submit"
             disabled={isSending}
-            className="group relative w-full bg-lime-400 hover:bg-lime-300 disabled:bg-lime-800/20 disabled:text-zinc-500 text-zinc-950 px-8 py-5 rounded-2xl text-lg font-black flex flex-col items-center justify-center transition-all active:scale-[0.98] mt-8 overflow-hidden border border-lime-500/20"
+            className="group relative w-full bg-lime-400 hover:bg-lime-300 disabled:bg-lime-800/20 disabled:text-zinc-500 text-zinc-950 px-8 py-5 rounded-2xl text-lg font-black flex flex-col items-center justify-center transition-all active:scale-[0.98] mt-8 overflow-hidden border border-[rgba(0,230,58,0.2)]"
           >
             <div className="flex items-center gap-2 relative z-10">
               {isSending ? (

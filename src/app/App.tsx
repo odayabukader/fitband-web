@@ -13,7 +13,7 @@ import { Languages, Sun, Moon } from 'lucide-react';
 
 export default function App() {
   const [lang, setLang] = React.useState('ar');
-  const [theme, setTheme] = React.useState('light');
+  const [theme, setTheme] = React.useState('dark');
   const t = translations[lang];
 
   const [selectedOffer, setSelectedOffer] = React.useState({

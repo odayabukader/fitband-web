@@ -36,8 +36,8 @@ export const ProductShowcase = ({ t, lang, theme }) => {
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-30" 
               style={{ 
                 background: isDark 
-                  ? 'radial-gradient(circle, rgba(163,230,53,0.1) 0%, rgba(163,230,53,0) 70%)' 
-                  : 'radial-gradient(circle, rgba(163,230,53,0.15) 0%, rgba(163,230,53,0) 70%)' 
+                  ? 'radial-gradient(circle, rgba(0,230,58,0.1) 0%, rgba(0,230,58,0) 70%)' 
+                  : 'radial-gradient(circle, rgba(0,230,58,0.15) 0%, rgba(0,230,58,0) 70%)' 
               }} 
             />
             <div className="absolute inset-0 flex items-center justify-center p-12">
@@ -106,7 +106,7 @@ export const ProductShowcase = ({ t, lang, theme }) => {
                   {lang === 'ar' ? 'طاقة 40 يوماً' : '40-Day Power'}
                 </p>
             </div>
-            <div className="w-16 h-16 bg-lime-400 rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(163,230,53,0.3)] shrink-0">
+            <div className="w-16 h-16 bg-lime-400 rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(0,230,58,0.3)] shrink-0">
                 <span className="text-zinc-950 font-black text-xl italic">
                   {lang === 'ar' ? 'برو' : 'PRO'}
                 </span>
